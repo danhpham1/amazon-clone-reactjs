@@ -29,9 +29,14 @@
     margin-top: 10px;
     border-color: #a88734 #9c7e31 #846a29;
     color: #111;
+    cursor: pointer;
 }
 
 .product__info{
     height: 100px;
     margin-bottom: 30px;
+}
+
+.product__rating{
+    display: flex;
 }
