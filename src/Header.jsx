@@ -8,26 +8,28 @@ import { Link } from 'react-router-dom';
 import { useStateValue } from './StateProvider';
 
 function Header() {
-    const [state,dispatch] = useStateValue();
+    const [state, dispatch] = useStateValue();
     console.log(state);
     return (
         <div className="header">
             <Link to='/'>
-                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt=""/>
+                <img className="header__logo" src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" />
             </Link>
             <div className="header__search">
                 <input type="text" className="header__searchInput" />
                 <SearchIcon className="header__searchIcon"></SearchIcon>
             </div>
             <div className="header__nav">
-                <div className="header__option">
-                    <span className="header__optionLineOne">
-                        Hello Guest
+                <Link to='/login'>
+                    <div className="header__option">
+                        <span className="header__optionLineOne">
+                            Hello Guest
                     </span>
-                    <span className="header__optionLineTwo">
-                        Sign In
+                        <span className="header__optionLineTwo">
+                            Sign In
                     </span>
-                </div>
+                    </div>
+                </Link>
                 <div className="header__option">
                     <span className="header__optionLineOne">
                         Return
@@ -46,7 +48,7 @@ function Header() {
                 </div>
                 <Link to='/checkout'>
                     <div className="header__optionBaseket">
-                        <ShoppingBasketIcon/>
+                        <ShoppingBasketIcon />
                         <span className="header__optionLineTwo header__basketCount">
                             {state.basket.length}
                         </span>

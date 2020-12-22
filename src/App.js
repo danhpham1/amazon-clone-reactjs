@@ -8,20 +8,26 @@ import {
   Link
 } from "react-router-dom";
 import Checkout from './Checkout';
+import Login from './Login';
 
 function App() {
   return (
     <div className="app">
       <Router>
-        {/* Header */}
-        <Header/>          
         <Switch>
+          <Route path='/login'>
+            <Login />
+          </Route>
           <Route path='/checkout'>
-            <Checkout/>
+            {/* Header */}
+            <Header />
+            <Checkout />
           </Route>
           <Route path='/'>
+            {/* Header */}
+            <Header />
             {/* Home */}
-            <Home/>
+            <Home />
           </Route>
         </Switch>
       </Router>
